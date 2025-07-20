@@ -1,0 +1,84 @@
+
+/*   modal do produto */
+.sub-produtos .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+ .sub-produtos .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 750px;
+    height: 500px;
+  }
+  
+.sub-produtos .modal-header {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    padding: 6px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+.sub-produtos #modal-nome{
+    margin-top: -8%;
+}  
+.sub-produtos .modal-body {
+    margin-top: -5%;
+    padding: 15px;
+    text-align: center;
+  }
+  
+.sub-produtos .modal-footer {
+    margin-top: -3%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  
+.sub-produtos .modal button{
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+.sub-produtos .modal #fechar-modal{
+    font-size: 3vh; 
+    border: 1px solid white;
+    background-color: blue; 
+    color: white; 
+ 
+ }
+
+.sub-produtos .modal #fechar-modal:hover{
+    font-size: 3vh; 
+    border: 2px solid white;
+    background-color: blue; 
+    color: white; 
+ 
+ }
+
+.sub-produtos .modal img{
+    margin-top: 3%;
+    filter: brightness(1.3);
+    height: 20vh;
+    width: 600vh;
+  }
+/** end modal do produto **/  

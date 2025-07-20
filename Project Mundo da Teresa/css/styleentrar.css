@@ -1,0 +1,611 @@
+
+
+* {
+    box-sizing: border-box !important;
+    padding: 0%;
+    margin: 0%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 14px ;
+    font-family:'Poppins', sans-serif;
+    line-height: 1.80857 ;
+    font-weight: normal ;
+    overflow-x: hidden;
+    color: #0044cc;
+    background-color: #333333;
+}
+
+/**  loader  **/
+  
+.loader_bg {
+    position: fixed;
+    z-index: 9999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** end  loader  **/
+
+ /** container header **/
+ .meu-escopo{
+    background-color:white ;
+    height: 100vh ;
+    color: blue;
+}
+
+.meu-escopo .telas #atendimento{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.meu-escopo .telas{
+    text-align: end;
+    padding: 10px 6%;
+    background-color:hotpink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meu-escopo .telas div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+ 
+.meu-escopo .telas .location{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.meu-escopo .telas a{
+    font-size: large;
+    text-decoration: none;
+    padding: 7px; 
+    color: white;
+}
+
+.meu-escopo .telas a:hover{
+    font-size: large;
+    text-decoration: none;
+    padding: 7px; 
+    background-color: blue;
+    outline: 1px solid #9999;
+    color: white;
+}
+
+.meu-escopo .fixar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.meu-escopo header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #9999;
+    border-bottom: 1px solid #9999;
+    padding: 1px 3%;
+    background-color: white;
+ 
+}
+
+.meu-escopo header #nome-loja{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meu-escopo header h2{
+    color: blue;
+}
+
+.meu-escopo header .store-title{
+    margin-top: 8px;
+    font-size: 3rem;
+    color: blue;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #0044cc, hotpink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 10px;
+    border: 3px solid hotpink;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.meu-escopo header span{
+    font-size: large;
+}
+
+.meu-escopo header nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meu-escopo header nav #cart-count{
+    background-color: blue;
+    padding: 2px;
+    height: 25px;
+    color: white;
+    border-radius: 30px;
+    font-size: small;
+    margin-left: -46%;
+}
+
+.meu-escopo header div{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.meu-escopo header div .input{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color: rgba(169, 169, 169, 0.173);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: 0px;
+}
+
+.meu-escopo header div .input:hover{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color: rgba(169, 169, 169, 0.173);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.282);
+}
+
+.meu-escopo header div .searchButton:hover{
+    color: white;
+    font-size: 3vh;
+}
+
+.meu-escopo header div input,.searchButton:hover{
+    height: 7vh;
+}
+
+
+.meu-escopo header div .searchButton{
+    background-color: blue;
+    border: 0px solid #9999;
+    color: white;
+    font-size: large;
+    padding: 7.6px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: -2px;
+    height: 7vh;
+}
+
+.meu-escopo .menu{
+    margin-top: 11%;
+}
+
+.meu-escopo .menu a{
+    text-decoration: none;
+    color: #ff66b3;
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.meu-escopo .menu a:hover{
+    text-decoration: none;
+    color: #0044cc;
+    border-bottom: 3px solid #0044cc;
+}
+
+.meu-escopo .menu nav{
+    background-color: rgba(169, 169, 169, 0.103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.meu-escopo #icon1{
+    font-size: 3vh;
+    color: white;
+    padding-left: 3%;
+}
+
+.meu-escopo #icon3{
+    font-size: 5vh;
+    color: hotpink;
+    padding-left: 5%;
+}
+
+.meu-escopo .menu #icon4{
+    font-size: 4vh;
+    color: white;
+
+}
+
+.meu-escopo .menu .btncompre{
+    color: white;
+    font-size: large;
+    border: none;
+    height: 4%;
+}
+
+.meu-escopo .menu .categoria{
+    position: relative;
+    width: 250px;
+    margin-right: 20%;
+}
+
+.meu-escopo .menu .categoria .sub-menu{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 135%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+.meu-escopo .menu .categoria .sub-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.meu-escopo .menu .categoria .sub-menu ul li {
+    border-top: 1px solid rgba(0, 0, 0, 0.193);
+    width: 95%;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    width: 135%;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a i {
+    margin-right: 10px;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a:hover {
+    color: hotpink;
+    font-weight:500;
+}
+/* Mostra o menu ao passar o cursor */
+.meu-escopo .menu .categoria:hover .sub-menu {
+    display: block;
+}
+
+.meu-escopo .menu .categoria .btncompre{
+    background-color: hotpink;
+    border: 2px solid hotpink;
+    border-radius: 4px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    cursor: pointer;
+    width: 135%;
+    text-align: left;
+    font-size: large;
+    border-radius: 5px;
+    padding-left: 65px;
+}
+
+.meu-escopo .menu .categoria .btncompre:hover{
+    background-color: pink;
+    color: #0044cc;
+    font-size: large;
+}
+
+.meu-escopo .menu .categoria a{
+    border-bottom: none;
+}
+
+.meu-escopo .link{
+    color: rgba(0, 0, 0, 0.753);
+
+}
+
+.meu-escopo .link:hover{
+    color: #9999;
+    border-bottom: 3px solid #9999;
+}
+
+.meu-escopo .menu .links{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+
+.meu-escopo .menu .links ul{ 
+   display: flex;
+   list-style-type: none;
+   justify-content: space-between;
+    
+}
+/** end header **/
+
+
+/** formulário **/
+
+
+.formulario form label,input,button{
+    display: block;
+    margin: 1% auto;
+    margin-left: 5%;
+}
+
+.formulario form figure #icon-person{
+    color: white;
+    font-weight: 400;
+    font-size: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario form h2{
+    padding: 2%;
+    font-weight: 400;
+    text-align: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.301);
+    width: 50%;
+    margin: 0% auto;
+    border-radius: 2vh;
+    margin-top: 5%;
+}
+
+.formulario form .sub-formulario{
+    background-color: white;
+    margin-top: 5%;
+    border-top-left-radius: 15%;
+    height: 50vh;
+ }
+
+.formulario form input,button{
+    line-height: 40px;
+    height: 40px;
+    outline: none;
+    font-size:13pt;
+    width: 90%;
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+.formulario form input:hover{
+    display: block;
+    margin: 1% auto;
+    margin-left: 5%;
+    border: 2px solid #2225e0;
+    border-radius: 5px;
+}
+
+.formulario form button{
+    background-color: rgba(0, 0, 255, 0.932);
+    color: white;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.formulario form button:hover{
+    background-color: blue;
+    color: white;
+    margin-top: 3%;
+}
+
+.formulario form{
+    outline: 1px solid black;
+    background-color: #33333307;
+    width: 30%;
+    height: 67vh;
+    margin: 3% auto;
+    text-align: start;
+    background-color: blue;
+    border-radius: 5%;
+}
+
+.formulario form span{
+    padding-left: 32%;
+    color: black;
+} 
+
+.formulario form .entrar-conta{
+    padding-left: 22%;
+    color: black;
+} 
+
+.formulario form .toggle-password{
+    position: absolute;
+    top: 73%;
+    right: 510px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+/** end formulário**/
+
+
+/** footer **/
+
+.rodapemaximum{
+    position: relative;
+    margin-top: 10%;
+    background-color: #1c1c1c17;
+    height: 84vh;
+    animation-name: animação-com-rodapé;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+@keyframes animação-com-rodapé{
+    from{
+        margin-left: 100%;
+        
+    }
+
+    to{
+        margin-right: 0%;
+    }
+}
+
+ .rodapemaximum footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+}
+
+.rodapemaximum footer section{
+    margin-top: 5%;
+}
+
+.rodapemaximum footer h3{
+    color: blue;
+    padding-bottom: 5px;
+}
+
+.rodapemaximum footer .text{
+  text-align: center;
+  color: black;
+ 
+}
+
+.rodapemaximum footer div{
+    padding-top: 10%;
+}
+
+.rodapemaximum footer span{
+    display: block;
+    color: black;
+}
+
+.rodapemaximum footer span a{
+    text-decoration: none;
+    color: black;
+}
+
+.rodapemaximum footer span a:hover{
+    text-decoration: none;
+    color: hotpink;
+    font-weight: 500;
+}
+
+.rodapemaximum footer .outras-catrgorias{
+    text-align: justify;
+    margin-left: 30%;
+}
+
+.rodapemaximum footer .inscricao{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.rodapemaximum footer .inscricao input,button{
+    padding: 2%;
+    border: none;
+}
+
+.rodapemaximum footer .inscricao input:hover{
+    border: 1px solid rgba(0, 0, 0, 0.452);
+}
+
+.rodapemaximum footer .inscricao button{
+    border: none;
+    background-color: rgba(255, 105, 180, 0.781);
+    color: white;
+    width: 135px;
+    height: 5%;
+}
+
+.rodapemaximum footer .inscricao button:hover{
+    border: none;
+    background-color: hotpink;
+    color: white;
+}
+
+.rodapemaximum .sub-footer{
+    border-top: 1px solid black;
+    margin-top: 10%;
+    color: black;
+ 
+}
+
+.rodapemaximum .sub-footer .sub2-footer2{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 figure img{
+    mix-blend-mode: darken;
+    width: 80px;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2  h4{
+  margin-left: -13%;
+  margin-top: -10px;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5{
+    padding-left: 5%;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5 #icon-redes-sociais{
+    margin-left: 5px;
+    color: #0044cc;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5 #icon-redes-sociais:hover{
+    margin-left: 5px;
+    color: hotpink;
+    font-weight: 500;
+    font-size: larger;
+}
+
+
+/** end footer **/
+

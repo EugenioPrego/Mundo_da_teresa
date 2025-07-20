@@ -1,0 +1,430 @@
+
+
+
+* {
+    box-sizing: border-box !important;
+    padding: 0%;
+    margin: 0%;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-size: 14px ;
+    font-family:'Poppins', sans-serif;
+    line-height: 1.80857 ;
+    font-weight: normal ;
+    overflow-x: hidden;
+    color: #0044cc;
+    background-color:  #3333339f;
+   
+}
+
+ /** container header **/
+
+.meu-escopo{
+    background-color:white ;
+    height: 100vh ;
+    color: #0044cc;
+
+}
+
+.meu-escopo .telas{
+    text-align: end;
+    padding: 10px 6%;
+    background-color:hotpink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meu-escopo .telas div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+ 
+.meu-escopo .telas .location{
+    margin-left: -50%;
+}
+
+.meu-escopo .telas a{
+    font-size: large;
+    text-decoration: none;
+    padding: 7px; 
+    color: white;
+}
+
+.meu-escopo .telas a:hover{
+    font-size: large;
+    text-decoration: none;
+    padding: 7px; 
+    background-color: blue;
+    outline: 1px solid #9999;
+    color: white;
+}
+
+.meu-escopo header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #9999;
+    border-bottom: 1px solid #9999;
+    padding: 1px 3%;
+    background-color: white;
+ 
+}
+
+.meu-escopo header h2{
+    color:rgb(89, 89, 218);
+}
+
+.meu-escopo header span{
+    font-size: large;
+}
+
+.meu-escopo header nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meu-escopo header div .input{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color: rgba(169, 169, 169, 0.173);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: 0px;
+}
+
+.meu-escopo header div .input:hover{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color: rgba(169, 169, 169, 0.173);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.282);
+}
+
+.meu-escopo header div .searchButton:hover{
+    color: white;
+    font-size: 3vh;
+}
+
+.meu-escopo header div input,.searchButton:hover{
+    height: 7vh;
+}
+
+
+.meu-escopo header div .searchButton{
+    background-color: rgba(0, 0, 255, 0.685);
+    border: 0px solid #9999;
+    color: white;
+    font-size: large;
+    padding: 7.6px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: -4px;
+    height: 7vh;
+}
+
+.meu-escopo .menu a{
+    text-decoration: none;
+    color: #ff66b3;
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.meu-escopo .menu a:hover{
+    text-decoration: none;
+    color: #0044cc;
+    border-bottom: 3px solid #0044cc;
+}
+
+.meu-escopo .menu nav{
+    background-color: rgba(169, 169, 169, 0.103);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.meu-escopo #icon1{
+    font-size: 3vh;
+    color: white;
+    padding-left: 3%;
+}
+
+.meu-escopo #icon3{
+    font-size: 4vh;
+    color: hotpink;
+    padding-left: 5%;
+}
+
+.meu-escopo .menu #icon4{
+    font-size: 4vh;
+    color: white;
+
+}
+
+.meu-escopo .menu .btncompre{
+    color: white;
+    font-size: large;
+    border: none;
+}
+
+.meu-escopo .menu .categoria{
+    position: relative;
+    width: 250px;
+    margin-right: 20%;
+}
+
+.meu-escopo .menu .categoria .sub-menu{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 135%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+.meu-escopo .menu .categoria .sub-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.meu-escopo .menu .categoria .sub-menu ul li {
+    border-top: 1px solid rgba(0, 0, 0, 0.193);
+    width: 95%;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    width: 135%;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a i {
+    margin-right: 10px;
+}
+.meu-escopo .menu .categoria .sub-menu ul li a:hover {
+    color: hotpink;
+    font-weight: 500;
+}
+/* Mostra o menu ao passar o cursor */
+.meu-escopo .menu .categoria:hover .sub-menu {
+    display: block;
+}
+
+.meu-escopo .menu .categoria .btncompre{
+    background-color: hotpink;
+    border: 2px solid hotpink;
+    border-radius: 4px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    cursor: pointer;
+    width: 135%;
+    text-align: left;
+    font-size: large;
+    border-radius: 5px;
+    padding-left: 65px;
+}
+
+.meu-escopo .menu .categoria .btncompre:hover{
+    background-color: pink;
+    color: #0044cc;
+    font-size: large;
+}
+
+.meu-escopo .menu .categoria a{
+    border-bottom: none;
+}
+
+.meu-escopo .link{
+    color: rgba(0, 0, 0, 0.753);
+}
+
+.meu-escopo .link:hover{
+    color: #9999;
+    border-bottom: 3px solid #9999;
+    position: relative;
+}
+
+.meu-escopo .menu .links{
+    margin-right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** end header **/
+
+
+/**  loader  **/
+  
+.loader_bg {
+    position: fixed;
+    z-index: 9999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** end  loader  **/
+
+
+/** footer **/
+.rodapemaximum{
+    background-color: #1c1c1c17;
+    height: 80vh;
+    animation-name: animação-com-rodapé;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    margin-top: 10%;
+}
+
+@keyframes animação-com-rodapé{
+    from{
+        margin-left: 100%;
+        
+    }
+
+    to{
+        margin-right: 0%;
+    }
+}
+
+ .rodapemaximum footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+}
+
+.rodapemaximum footer section{
+    margin-top: 5%;
+}
+
+.rodapemaximum footer h3{
+    color: blue;
+    padding-bottom: 5px;
+}
+
+.rodapemaximum footer .text{
+  text-align: center;
+  color: black;
+ 
+}
+
+.rodapemaximum footer div{
+    padding-top: 10%;
+}
+
+.rodapemaximum footer span{
+    display: block;
+    color: black;
+}
+
+.rodapemaximum footer span a{
+    text-decoration: none;
+    color: black;
+}
+
+.rodapemaximum footer span a:hover{
+    text-decoration: none;
+    color: hotpink;
+    font-weight:500;
+}
+
+.rodapemaximum footer .outras-catrgorias{
+    text-align: justify;
+    margin-left: 30%;
+}
+
+.rodapemaximum footer .inscricao{
+    margin-top: 5%;
+}
+
+.rodapemaximum footer .inscricao input,button{
+    padding: 2%;
+}
+
+.rodapemaximum footer .inscricao button{
+    border: none;
+    background-color: rgba(255, 105, 180, 0.781);
+    color: white;
+}
+
+.rodapemaximum footer .inscricao button:hover{
+    border: none;
+    background-color: hotpink;
+    color: white;
+}
+
+.rodapemaximum .sub-footer{
+    border-top: 1px solid black;
+    margin-top: 10%;
+    color: black;
+ 
+}
+
+.rodapemaximum .sub-footer .sub2-footer2{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 figure img{
+    mix-blend-mode: darken;
+    width: 80px;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2  h4{
+  margin-left: -13%;
+  margin-top: -10px;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5{
+    padding-left: 5%;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5 #icon-redes-sociais{
+    margin-left: 5px;
+    color: #0044cc;
+}
+
+.rodapemaximum .sub-footer .sub2-footer2 h5 #icon-redes-sociais:hover{
+    margin-left: 5px;
+    color: hotpink;
+    font-weight: 500;
+}
+
+
+/** end footer **/

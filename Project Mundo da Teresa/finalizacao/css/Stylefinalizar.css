@@ -1,0 +1,125 @@
+
+ .checkout-container {
+    max-width: 800px;                      
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px  blue;
+    margin: 8% auto;
+}
+ .product-item {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    align-items: center;
+}
+.product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+.product-info {
+    flex-grow: 1;
+}
+.checkout-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #333;
+ }
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+ }
+.checkout-button {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+        
+/* Estilo do modal*/
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+    .close {
+      float: right;
+      cursor: pointer;
+      font-size: 24px;
+    }
+   /* end Estilo do modal*/ 
+
+  /* formulário de pagamento */
+    form label{
+    display: block;
+    margin: 1% auto;
+    margin-left: 5%;
+}
+    form input:hover{
+    border: 2px solid #2225e0;
+    border-radius: 5px;
+}
+    form input,button,select{
+    line-height: 40px;
+    height: 40px;
+    outline: none;
+    font-size:13pt;
+    width: 90%;
+    cursor: pointer;
+    margin-left: 5%;
+}
+
+form select{
+    margin-left: 5%;
+}
+
+form select:hover{
+    border: 2px solid #2225e0;
+    border-radius: 5px;
+} 
+    form button{
+    background-color:rgba(0, 0, 255, 0.932);
+    color: white;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    form button:hover{
+    background-color: blue;
+    color: white;
+    margin-top: 3%;
+}
+/** end formulário de pagamento **/
+
+

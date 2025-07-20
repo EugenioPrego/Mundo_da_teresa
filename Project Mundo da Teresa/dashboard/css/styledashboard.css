@@ -1,0 +1,342 @@
+
+*{
+    box-sizing: border-box!important;
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#corpo{
+    font-size: 14px ;
+    font-family:'Poppins', sans-serif;
+    line-height: 1.80857 ;
+    font-weight: normal ;
+    overflow-x: hidden;
+    color: #0044cc; 
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+/**  loader  **/
+.loader_bg {
+    position: fixed;
+    z-index: 9999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** end  loader  **/
+
+
+ /** dashboard **/
+.dashboard{
+    height: 20vh;
+    display: grid;
+    grid-template-areas:  
+    "barra-lateral sub-dashboard"
+    ;
+    gap: 5%;
+}
+
+/**barra-laterl  **/
+.dashboard .barra-lateral header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard header .store-title{
+    margin-top: 8px;
+    font-size: 3rem;
+    color: #4a90e2;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #0044cc, hotpink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px 10px;
+    border: 3px solid hotpink;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(2.0);
+}
+
+.dashboard .barra-lateral{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: hotpink;
+    height:102vh;
+    width: 24%;
+    padding-top: 5%;
+}
+
+.dashboard .barra-lateral ul{
+    list-style-type: none;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+.dashboard .barra-lateral ul .visão{
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.dashboard .barra-lateral ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.dashboard .barra-lateral ul li a:hover{
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+    font-size: large;
+}
+
+.dashboard .barra-lateral ol{
+    list-style-type: none;
+    padding-top: 30%;
+    margin-left: 15%;
+}
+
+.dashboard .barra-lateral ol li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.dashboard .barra-lateral ol li a:hover{
+    text-decoration: none;
+    color: blue;
+    font-weight: 500;
+    font-size: large;
+}
+/** end barra-laterl  **/
+
+/** sub-dashboard **/
+.dashboard .sub-dashboard{
+    position: relative;
+    padding-left: 410px;
+}
+
+.dashboard .sub-dashboard .usuario nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 5%;
+}
+
+.dashboard .sub-dashboard .usuario nav  div{
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .sub-dashboard .usuario nav  div .input{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color:#9999996c;
+    outline: none;
+    border: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.dashboard .sub-dashboard .usuario nav  div .input:hover{
+    padding: 9px 20px;
+    cursor: pointer;
+    background-color: #9999996c;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.282);
+}
+
+.dashboard .sub-dashboard .usuario nav  div .searchButton:hover{
+    color: white;
+    font-size: 3vh;
+}
+
+.dashboard .sub-dashboard .usuario nav  div input,.searchButton:hover{
+    height: 7vh;
+}
+
+
+.dashboard .sub-dashboard .usuario nav div .searchButton{
+    background-color: blue;
+    border: 0px solid #9999;
+    color: white;
+    font-size: large;
+    padding: 7.6px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: -4px;
+    height: 7vh;
+}
+
+.dashboard .sub-dashboard .usuario nav h5{
+    padding-left: 20%;
+}
+
+.dashboard .sub-dashboard .usuario nav .a{
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 10px;
+}
+
+.dashboard .sub-dashboard .usuario nav .a:hover{
+    font-weight: 500;
+    font-size: larger;
+}
+
+.dashboard .sub-dashboard .usuario nav figure{
+    padding: 1px 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.dashboard .sub-dashboard .usuario nav figure #usuario1{
+    font-size: 4vh;
+}
+    
+.dashboard .sub-dashboard .visao-geral-dados h4{
+    padding-top: 5%;
+    animation: passar 6s ease-in-out infinite ;
+}
+
+@keyframes passar {
+    0%{
+        margin-left: 50%;
+    
+    }
+    100%{
+        margin-right: 0%;
+        
+    }
+}
+
+.dashboard .sub-dashboard .sub-visao-geral{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-bottom: 8%;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral  #rosa{
+    background-color: hotpink;
+    border-right: 10px solid blue;
+    padding: 2% 11vh;
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:  
+    "number users"
+    ;
+    gap: 20%;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #rosa figure{
+    background-color: white;
+    border-radius: 15px;
+    width: 8vh;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #rosa figure #icon-person{
+    color: black;
+    font-size: 8vh;
+}
+
+
+
+.dashboard .sub-dashboard .sub-visao-geral  #azul{
+    background-color: blue;
+    border-right: 10px solid hotpink;
+    padding: 1% 8vh;
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:  
+    "number users"
+    ;
+    gap: 20%;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #azul figure{
+    background-color: white;
+    border-radius: 15px;
+    width: 8vh;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #azul figure #icon-person{
+    color: black;
+    font-size: 8vh;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral  #cinzento{
+    background-color: #9999998a;
+    border-right: 10px solid black;
+    padding: 1% 8vh;
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:  
+    "number users"
+    ;
+    gap: 20%;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #cinzento figure{
+    background-color: white;
+    border-radius: 15px;
+    width: 8vh;
+    height: 15vh;
+}
+
+.dashboard .sub-dashboard .sub-visao-geral #cinzento figure #icon-person{
+    color: black;
+    font-size: 8vh;
+}
+
+.dashboard .sub-dashboard .grafico .sub-grafico{
+    display: grid;
+    grid-template-areas:  
+    "graf graf"
+    "graf graf"
+    ;
+    gap: 2%;
+}
+/** end sub-dashboard **/
+ /** end dashboard **/
+
+ /** responvidade **/
+ 
+ /** end responvidade **/
+ 

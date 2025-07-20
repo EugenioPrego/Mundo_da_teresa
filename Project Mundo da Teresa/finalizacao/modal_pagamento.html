@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+       <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- mobile metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    
+    <!--css-->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!--bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- javaScript -->
+    <script defer src="../js/procurarProdutos.js"></script>
+    <script defer src="../js/capturadosdados.js"></script>
+    <script defer src="../finalizacao/finalizarcompra.js"></script>
+    <script defer src="../chatbot/js/chatbot.js"></script>
+    <script defer src="../finalizacao/adicionarProduto.js"></script>
+    <script defer src="../js/modal_do_produto.js"></script>
+
+<!--title-->
+    <title>Mundo da Teresa</title>
+     <!-- logotipo do sistema -->
+     <link rel="shortcut icon" type="image/icon" href="../images/logotipos/logo mt.png"/>
+
+</head>
+<body>
+    
+      <!-- loader  -->
+          <div class="loader_bg">
+            <div class="loader"><img src="../images/loader/loading.gif" alt="#" /></div>
+         </div>
+         <!-- end loader -->
+
+
+
+         <!-- pagamento -->
+         <div class="pagamento">
+            <div class="sub-pagamento">
+
+            <form id="pagamentoForm" method="post">
+            <label>Valor:</label>
+            <input type="text" name="valor" id="valor" required><br>
+
+            <label>Método de Pagamento:</label>
+            <input type="text" name="metodoPagamento" id="metodoPagamento" required><br>
+
+            <label>Data do Pagamento:</label>
+            <input type="date" name="dataPagamento" id="dataPagamento" required><br>
+
+            <button type="button" id="confirm-purchase">Finalizar Compra</button>
+        </form>
+
+            </div>
+         </div>
+         <!-- end pagamento -->
+
+
+  
+
+        <!-- <script>
+        const checkoutButton = document.getElementById("confirm-purchase");
+        const confirmarBtn = document.getElementById("confirmarBtn");
+
+        checkoutButton.addEventListener("click", () => {
+            const valor = document.getElementById("valor").value;
+            const metodo = document.getElementById("metodoPagamento").value;
+            const data = document.getElementById("dataPagamento").value;
+
+            if (!valor || !metodo || !data) {
+            alert("Preencha todos os campos!");
+            return;
+            }
+
+            // Preenche o resumo do modal
+            document.getElementById("resumo").innerHTML = `
+            <strong>Valor:</strong> KZs ${valor}<br>
+            <strong>Método:</strong> ${metodo}<br>
+            <strong>Data:</strong> ${data}
+            `;
+
+            // Abre modal
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("modal").style.display = "block";
+        });
+
+        confirmarBtn.addEventListener("click", async () => {
+            const valor = document.getElementById("valor").value;
+            const metodo = document.getElementById("metodoPagamento").value;
+            const data = document.getElementById("dataPagamento").value;
+
+            const formData = new FormData();
+            formData.append("valor", valor);
+            formData.append("metodoPagamento", metodo);
+            formData.append("dataPagamento", data);
+
+            try {
+            const response = await fetch("processa_pagamento.php", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.text();
+            alert(result); // Resposta do PHP
+
+            fecharModal();
+            document.getElementById("pagamentoForm").reset();
+            } catch (error) {
+            alert("Erro ao processar pagamento.");
+            }
+        });
+
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+        </script> -->
+
+      
+
+                                  <!-- Javascript files-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery-3.0.0.min.js"></script>
+        <!-- sidebar -->
+        <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../js/custom.js"></script>
+</body>
+</html>

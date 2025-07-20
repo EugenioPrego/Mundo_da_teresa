@@ -1,0 +1,515 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- basic -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <!-- mobile metas -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        
+        <!--css-->
+        <link rel="stylesheet" href="../categoria/css/stylemochilasbolsas.css">
+        <link rel="stylesheet" href="../chatbot/css/styleChatbot.css">
+        <link rel="stylesheet" href="../css/stylemodal_carrinho.css">
+        <link rel="stylesheet" href="../categoria/css/style_modal_produto.css">
+    
+        <!--bootstrap icon-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+        <!--bootstrap css-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+        <!-- javaScript -->
+        <script defer src="../js/procurarProdutos.js"></script>
+        <script defer src="../js/capturadosdados.js"></script>
+        <script defer src="../categoria/js/finalizar_compra_categoria.js"></script>
+        <script defer src="../chatbot/js/chatbot.js"></script>
+        <script defer src="../finalizacao/js/adicionarProduto.js"></script>
+        <script defer src="../js/modal_do_produto.js"></script>
+        <script defer src="../js/eliminar_produto.js"></script>
+    
+    <!--title-->
+        <title>Mundo da Teresa</title>
+         <!-- logotipo do sistema -->
+         <link rel="shortcut icon" type="image/icon" href="../images/logotipos/logo mt.png"/>
+</head>
+<body>
+
+       <!-- loader  -->
+       <div class="loader_bg">
+        <div class="loader"><img src="../images/loader/loading.gif" alt="#" /></div>
+     </div>
+     <!-- end loader -->
+
+     <!-- header -->
+    <div class="meu-escopo">
+        <div class="row">
+            <div class="col6-mx-auto col3-mx-auto col-mx-auto">
+                <div class="fixar">
+                  <div class="telas">
+                    <div id="atendimento">
+                      <div>
+                        <i id="icon1" class="bi bi-telephone-fill"></i>
+                        <span>944590469</span>
+                    </div>
+
+                    <div class="location">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <span>Capalanga na Rua do Hospital</span>
+                    </div>
+                    </div>
+
+                      <div>
+                          <a href="../entrar.php">Entrar</a>
+                      <a href="../registrar.php">Registrar</a>
+                      </div>
+                  </div>
+          
+                  <header>
+                    <div id="nome-loja">
+                      <h2 class="store-title">MT</h2>
+                      <h3 >Mundo <br> da Teresa</h3>
+                    </div>
+                    <div>
+                      <input list="opcoes" class="input" type="search"  id="search"  placeholder="procurar produtos">
+                      <datalist id="opcoes">
+                        <option value="Mochila"></option> <option value="Mochila Montanha"></option>
+                        <option value="Mochila Jean"></option> <option value="Mochila Jean 2"></option>
+                        <option value="Mochila para Viagem"></option> <option value="Mochila Ideal para Viagem"></option>
+                        <option value="Mochila Personalizada"></option> <option value="Bolsa para Notebook"></option>
+                        <option value="Bolsa para Notebook 2"></option> <option value="Bolsa para Notebook 3"></option>
+                        <option value="Bolsa para Notebook 4"></option> <option value="Bolsa para Notebook 5"></option>
+                      </datalist>
+                      <button class="searchButton"  type="submit" value="search" onclick="filtrarProdutos()" ><i class="bi bi-search"></i></button>
+                  </div>
+                  <nav id="cart">
+                    <a id="cart-icon" style="display: flex;" href="#"> 
+                        <i id="icon3" class="bi bi-cart3"></i> 
+                        <span id="cart-count">0</span> 
+                    </a>
+                    <ul id="cart-items"></ul>
+                    <aside id="total">0.00 KZ</aside>
+                </nav>
+                  </header>
+                </div>
+
+                      <!-- Modal do Carrinho -->
+            <div id="cartModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Seus Produtos</h2>
+                <div id="cartItems" class="cart-list"></div>
+                <aside id="cartTotal">Total: 0.00 KZ</aside>
+                <div class="horizontal">
+                   <button id="eliminar_produto" onclick="elimnar_produto()">🗑️ Eliminar Tudo</button>
+                  <!-- <a href="../finalizacao/finalizar.html"> -->
+                  <button id="checkoutButton">🚀Finalizar Compra</button>
+                </a>
+                </div>
+               
+              </div>
+            </div>
+                    <!-- end modal do carrinho  -->
+        
+                    <div class="menu">
+                        <nav>
+                            <div class="categoria">
+                                <button class="btncompre"><i style="font-size: 3vh; margin-right: 5%;"  class="bi bi-list"></i> Compre por Categoria </button>
+                                <div class="sub-menu">
+                                  <ul>
+                                    <li style="border-top: none;"><a href="../categoria/acessorios.html"><i class="fas fa-seedling"></i> Acessórios( Joias,Relógios e óculos)</a></li>
+                                    <li><a href="../categoria/roupasmasculinas.html"><i class="fas fa-home"></i> Roupas Masculinas</a></li>
+                                    <li><a href="../categoria/roupasfemininas.html"><i class="fas fa-blender"></i> Roupas Femininas</a></li>
+                                    <li><a href="../categoria/sapatos.html"><i class="fas fa-couch"></i> Sapatos</a></li>
+                                    <li><a href="../categoria/mochilasbolsas.html"><i class="fas fa-suitcase"></i> Mochilas e Bolsas</a></li>
+                                </ul>
+                                </div>        
+                            </div>
+
+                            <div class="links">
+                              <ul>
+                                <li><a class="link" href="../index.html">Início</a></li>
+                                <li><a  class="link" href="../produtos.html">Todos os Produtos</a></li>
+                                <li><a class="link" href="../marcas.html">Marcas</a></li>
+                                <li>        
+                                  <div class="categoria">
+                                    <a class="link" style="cursor: pointer;">Informações </a>
+                                    <div style="top: 28px; width: 120%;" class="sub-menu">
+                                      <ul style="display: block;">
+                                        <li style="border-top: none;"><a href="../informacoes/sobreteresa.html"><i class="fas fa-seedling"></i> Sobre o Mundo da Teresa</a></li>
+                                        <li><a href="../informacoes/locaisContatos.html"><i class="fas fa-home"></i> Locais e Contactos</a></li>
+                                        <li><a href=""><i class="fas fa-blender"></i> Promoções Ativas</a></li>
+                                        <li><a href=""><i class="fas fa-couch"></i> Dúvidas Frequentes</a></li>
+                                    </ul>
+                                  </div></li>
+                              </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- end header -->
+
+                        <!-- chatbot -->
+    <button class="chat-button" onclick="openChat()">💬</button>
+    <div class="chat-modal" id="chat-modal">
+        <div class="header">
+          <figure><img src="../images/pessoas/chapeus_capa_interno_2x.webp" alt=""><span style="color: white; margin-left: 5px;">ChatTeresa</span></figure>
+          
+          <button class="close-button" onclick="closeChat()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <textarea type="text" style="padding: 7px;" id="user-input" placeholder="    Digite sua pergunta..."></textarea>
+            <button id="botao-enviar" onclick="sendMessage()"><i class="bi bi-cursor-fill"></i></button>
+        </div>
+    </div>
+    <!-- end chatbot -->
+
+                    <!-- Sapatos -->
+                    <div class="produtos">
+                        <h3>Mochilas e Bolsas</h3>
+                        <div class="sub-produtos">
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="1" data-tamanho="L" data-estoque="12" data-nome="Mochila" data-preco="11000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila.jpg">
+                                <figure><img src="../images/mochilas e bolsas/mochila.jpg" alt=""></figure>
+                                <h5 >Mochila</h5>
+                                <p> 11.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="1"
+                                  data-image="../images/mochilas e bolsas/mochila.jpg"
+                                  data-name="Mochila"
+                                  data-price="11000" onclick="try { addToCart(11000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn" class="btn btn-primary" ><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+                      
+                                            <!-- Modal -->
+                                 <div class="overlay" id="overlay" style="display: none;"></div>
+                        <div class="modal" id="modal" style="display: none;">
+                            <div style="background-color: blue;" class="modal-header">
+                                Produto Adicionado ao Carrinho com Sucesso !!
+                                <button style="background-color: blue;" id="fechar-modal" onclick="closeModal()">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modal-image" src="" alt="Produto" style="max-width: 100px; margin-bottom: 10px;">
+                                <h5 id="modal-nome"></h5>
+                                <p id="modal-preco"></p>
+                                <p id="modal-fornecedor"></p>
+                                 <p id="modal-tamanho" style="margin-right: 10%;">📏 <strong>Tamanho:</strong> <span id="tamanho-valor"></span></p>
+                                 <p id="modal-estoque" style="">📦 <strong>Estoque:</strong> <span id="estoque-valor"></span> unidades</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" id="continuar" onclick="closeModal()">Continuar comprando</button>
+                                <a href="../finalizacao/finalizar.html" style="height: 7vh; background-color: blue;" class="btn btn-primary" id="finalizar">Finalizar a encomenda</a>
+                            </div>
+                        </div>
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="2" data-tamanho="L" data-estoque="14" data-nome="Mochila Montanha" data-preco="9500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila montanha.jpeg">
+                                <figure><img src="../images/mochilas e bolsas/mochila montanha.jpeg" alt=""></figure>
+                                <h5 >Mochila Montanha</h5>
+                                <p> 9.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="2"
+                                  data-image="../images/mochilas e bolsas/mochila montanha.jpeg"
+                                  data-name="Mochila Montanha"
+                                  data-price="9500" onclick="try { addToCart(9500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="3" data-tamanho="-M-" data-estoque="13" data-nome="Mochila Jean" data-preco="8000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila jeans.png">
+                                <figure><img src="../images/mochilas e bolsas/mochila jeans.png" alt=""></figure>
+                                <h5 >Mochila Jean</h5>
+                                <p> 8.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="3"
+                                  data-image="../images/mochilas e bolsas/mochila jeans.png"
+                                  data-name="Mochila Jean"
+                                  data-price="8000" onclick="try { addToCart(8000); } catch(e) {} try { openProductModal(this); } catch(e) {}" onclick="openProductModal(this)" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="4" data-tamanho="M" data-estoque="12" data-nome="Mochila Jean 2" data-preco="7500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila jean 2.webp">
+                                <figure><img style="filter: brightness(1.4);" src="../images/mochilas e bolsas/mochila jean 2.webp" alt=""></figure>
+                                <h5 >Mochila Jean 2</h5>
+                                <p> 7.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="4"
+                                  data-image="../images/mochilas e bolsas/mochila jean 2.webp"
+                                  data-name="Mochila Jean 2"
+                                  data-price="7500" onclick="try { addToCart(7500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="5" data-tamanho="XL" data-estoque="9" data-nome="Mochila para Viagem" data-preco="18000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila para viagem.jpeg">
+                                <figure><img src="../images/mochilas e bolsas/mochila para viagem.jpeg" alt=""></figure>
+                                <h5>Mochila para Viagem</h5>
+                                <p> 18.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="5"
+                                  data-image="../images/mochilas e bolsas/mochila para viagem.jpeg"
+                                  data-name="Mochila para Viagem"
+                                  data-price="18000" onclick="try { addToCart(18000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn" class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="6" data-tamanho="XL" data-estoque="8" data-nome="Mochila Ideal para Viagem" data-preco="16000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila ideal para viagem.jpg">
+                                <figure><img src="../images/mochilas e bolsas/mochila ideal para viagem.jpg" alt=""></figure>
+                                <h5 >Mochila Ideal para Viagem</h5>
+                                <p> 16.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="6"
+                                  data-image="../images/mochilas e bolsas/mochila ideal para viagem.jpg"
+                                  data-name="Mochila Ideal para Viagem"
+                                  data-price="16000" onclick="try { addToCart(16000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="7" data-tamanho="L" data-estoque="12" data-nome="Mochila Personalizada" data-preco="9500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/mochila personalizada.webp">
+                                <figure><img src="../images/mochilas e bolsas/mochila personalizada.webp" alt=""></figure>
+                                <h5 >Mochila Personalizada</h5>
+                                <p> 9.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="7"
+                                  data-image="../images/mochilas e bolsas/mochila personalizada.webp"
+                                  data-name="Mochila personalizada"
+                                  data-price="9500" onclick="try { addToCart(9500); } catch(e) {} try { openProductModal(this); } catch(e) {}"  id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="8" data-tamanho="M" data-estoque="11" data-nome="Bolsa para Notebook" data-preco="11500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/bolsa para notebook.jpg">
+                                <figure><img src="../images/mochilas e bolsas/bolsa para notebook.jpg" alt=""></figure>
+                                <h5 >Bolsa para Notebook</h5>
+                                <p> 11.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="8"
+                                  data-image="../images/mochilas e bolsas/bolsa para notebook.jpg"
+                                  data-name="Bolsa para Notebook"
+                                  data-price="11500" onclick="try { addToCart(11500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="9" data-tamanho="M" data-estoque="14" data-nome="Bolsa para Notebook 2" data-preco="10000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/bolsa para notebook 2.jpeg">
+                                <figure><img src="../images/mochilas e bolsas/bolsa para notebook 2.jpeg" alt=""></figure>
+                                <h5 >Bolsa para Notebook 2</h5>
+                                <p> 10.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="9"
+                                  data-image="../images/mochilas e bolsas/bolsa para notebook 2.jpeg"
+                                  data-name="Bolsa para Notebook 2"
+                                  data-price="10000" onclick="try { addToCart(10000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="10" data-tamanho="L" data-estoque="12" data-nome="Bolsa para Notebook 3" data-preco="12500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/bolsa para notebook 3.jpg">
+                                <figure><img src="../images/mochilas e bolsas/bolsa para notebook 3.jpg" alt=""></figure>
+                                <h5 >Bolsa para Notebook 3</h5>
+                                <p> 12.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="10"
+                                  data-image="../images/mochilas e bolsas/bolsa para notebook 3.jpg"
+                                  data-name="Bolsa para Notebook 3"
+                                  data-price="12500" onclick="try { addToCart(12500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="11" data-tamanho="M" data-estoque="12" data-nome="Bolsa para Notebook 4" data-preco="12800 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/bolsa para notebook 4.jpg">
+                                <figure><img src="../images/mochilas e bolsas/bolsa para notebook 4.jpg" alt=""></figure>
+                                <h5 >Bolsa para Notebook 4</h5>
+                                <p> 12.800 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="11"
+                                  data-image="../images/mochilas e bolsas/bolsa para notebook 4.jpg"
+                                  data-name="Bolsa para Notebook 4"
+                                  data-price="12800" onclick="try { addToCart(12800); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                      
+                           <section class="todos-produtos">
+                            <div class="card2" data-id="12" data-tamanho="M" data-estoque="10" data-nome="Bolsa para Notebook 5" data-preco="13500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/mochilas e bolsas/bolsa para notebook 5.jpg">
+                                <figure><img src="../images/mochilas e bolsas/bolsa para notebook 5.jpg" alt=""></figure>
+                                <h5 >Bolsa para Notebook 5</h5>
+                                <p> 13.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="12"
+                                  data-image="../images/mochilas e bolsas/bolsa para notebook 5.jpg"
+                                  data-name="Bolsa para Notebook 5"
+                                  data-price="13500" onclick="try { addToCart(13500); } catch(e) {} try { openProductModal(this); } catch(e) {}"  id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                           
+                        </div>
+                      
+                      </div>
+                                 <!-- end sapatos -->
+                      
+
+                     <!-- footer -->
+                     <div class="rodapemaximum">
+
+                        <footer>
+                    
+                          <section>
+                            <h3>Mundo da Teresa <br> - Loja online</h3>
+                            <leg class="text">Encontre os melhores produtos <br> no "Mundo da Teresa" agora Online</leg>
+                            
+                            <div>
+                              <span>Linha direta 24/7 (+244) 953435021</span> 
+                              <span>Luanda, Angola</span> 
+                              <span> Seg - Sáb 07H -18H /
+                                    Dom 07H -15H
+                                <span>
+                            </div>
+                    
+                          </section>
+                      
+                          <section class="links">
+                            <h3>Menu</h3>
+                    
+                            <span><a href="../index.html">Início</a></span>
+                            <span><a href="../produtos.html">Todos os produtos</a></span> 
+                            <span><a href="../marcas.html">Marcas</a></span>
+                            <span><a style="color: transparent;" >Informações</a></span>
+                            <span><a style="color: transparent;" >Informações</a></span>
+                            <span><a style="color: transparent;" >Informações</a></span>
+                            <span><a style="color: transparent;" >Informações</a></span>
+                    
+                          </section>
+                      
+                          <section>
+                            <h3>Outras Categorias</h3>
+                            <div class="outras-catrgorias">
+                              <span><a href="../categoria/roupasinfantis.html">Roupas Infantis</a></span>
+                              <span><a href="../categoria/botasfemininas.html">Botas Femininas</a></span>
+                              <span><a href="../categoria/perfumes.html">Perfumes</a></span>
+                              <span><a style="color: transparent;">Colar</a></span>
+                              <span><a style="color: transparent;">Chinelos</a></span> 
+                              <span><a style="color: transparent;">Calções</a></span> 
+                            </div>
+                       
+                          </section>
+                      
+                          <section>
+                            <h3>Boletim de Notícias</h3>
+                    
+                            <span>
+                              Registre-se agora para receber 
+                              atualizações sobre <br> promoções 
+                              e cupons. Não se preocupe! 
+                              Não enviamos spam
+                            </span>
+                    
+                            <div class="inscricao">
+                              
+                               <input type="text" placeholder="digite seu e-mail">
+                              <button> <i id="envelope" class="bi bi-envelope"></i> inscrever-se</button>
+                              
+                            </div>
+                          </section>
+                      
+                        </footer>
+                      
+                        <div class="sub-footer">
+                          
+                          <div class="sub2-footer2">
+                          <h6> &copy;2025 mundo da teresa Online Todos <br> 
+                            Direitos Reservados
+                          </h6>
+                    
+                          <figure><img src="../images/logotipos/express.png" alt="error...">
+                            <img src="../images/logotipos/multicaixa.jpeg" style="width: 30px;" alt="error...">
+                          </figure>
+                          <h4>Multicaixa</h4>
+                          <h5>fique conectado: 
+                          <a href="https://www.facebook.com/mundodateresa" target="_blank">
+                            <i id="icon-redes-sociais" class="bi bi-facebook"></i>
+                          </a>
+                          <a href="https://www.instagram.com/mundodateresa" target="_blank">
+                            <i id="icon-redes-sociais" class="bi bi-instagram"></i>
+                          </a>
+                          <a href="https://twitter.com/mundodateresa" target="_blank">
+                            <i id="icon-redes-sociais" class="bi bi-twitter"></i>
+                          </a>
+                          </h5>
+                    
+                          </div>
+                    
+                        </div>
+                    
+                      </div>
+                    
+                       <!-- end footer -->
+
+                            <!-- Javascript files-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- sidebar -->
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/custom.js"></script>
+        <script defer>
+// Adicione um atraso para iniciar o carrossel automaticamente após um tempo maior
+$('#carouselExampleAutoplaying').carousel({
+  interval: 5000 // Atraso de 5 segundos entre os slides
+});
+
+// Mostrar o primeiro item de forma suave ao carregar
+$('.carousel-item:first').addClass('active');
+
+    </script>
+</body>
+</html>

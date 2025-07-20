@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- mobile metas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    
+    <!--css-->
+    <link rel="stylesheet" href="../categoria/css/styleacessorios.css">
+    <link rel="stylesheet" href="../chatbot/css/styleChatbot.css">
+    <link rel="stylesheet" href="../css/stylemodal_carrinho.css">
+    <link rel="stylesheet" href="../categoria/css/style_modal_produto.css">
+
+    <!--bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!--bootstrap css-->
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- javaScript -->
+    <script defer src="../js/procurarProdutos.js"></script>
+    <script defer src="../js/capturadosdados.js"></script>
+    <script defer src="../categoria/js/finalizar_compra_categoria.js"></script>
+    <script defer src="../chatbot/js/chatbot.js"></script>
+    <script defer src="../finalizacao/js/adicionarProduto.js"></script>
+    <script defer src="../js/modal_do_produto.js"></script>
+    <script defer src="../js/eliminar_produto.js"></script>
+  
+
+<!--title-->
+    <title>Mundo da Teresa</title>
+     <!-- logotipo do sistema -->
+     <link rel="shortcut icon" type="image/icon" href="../images/logotipos/logo mt.png"/>
+  <body>
+    
+     <!-- loader  -->
+     <div class="loader_bg">
+        <div class="loader"><img src="../images/loader/loading.gif" alt="#" /></div>
+     </div>
+     <!-- end loader -->
+
+     <!-- header -->
+    <div class="meu-escopo">
+        <div class="row">
+            <div class="col6-mx-auto col3-mx-auto col-mx-auto">
+              <div class="fixar">
+                <div class="telas">
+                  <div id="atendimento">
+                    <div>
+                      <i id="icon1" class="bi bi-telephone-fill"></i>
+                      <span>944590469</span>
+                  </div>
+
+                  <div class="location">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Capalanga na Rua do Hospital</span>
+                  </div>
+                  </div>
+
+                    <div>
+                        <a href="../entrar.php">Entrar</a>
+                    <a href="../registrar.php">Registrar</a>
+                    </div>
+                </div>
+        
+                <header>
+                  <div id="nome-loja">
+                    <h2 class="store-title">MT</h2>
+                    <h3 >Mundo <br> da Teresa</h3>
+                  </div>
+                  <div>
+                    <input list="opcoes" class="input" type="search" id="search"   placeholder="  procurar produtos">
+                    <datalist id="opcoes">
+                      <option value="Joia Masculina"></option> <option value="Colar Rivieira"></option>
+                      <option value="Joia Premium"></option> <option value="Colar de Prata"></option>
+                      <option value="Relógio"></option> <option value="Relógio th"></option>
+                      <option value="Relógio da Xaomi Inteligente"></option> <option value="Relógio da Xaomi"></option>
+                      <option value="Óculos Retangular"></option> <option value="Óculos Quadrado"></option>
+                      <option value="Óculos de Sol"></option> <option value="Óculos de Natação"></option>
+                      <option value="Pulseira Bracelete Espinho"></option> <option value="Bracelete Trançado"></option>
+                      <option value="Aneis de Namoro"></option> <option value="Aneis de Casamento"></option>
+                    </datalist>
+                    <button class="searchButton"  type="submit" value="search" onclick="filtrarProdutos()" ><i class="bi bi-search"></i></button>
+                </div>
+                <nav id="cart">
+                  <a id="cart-icon" style="display: flex;" href="#"> 
+                      <i id="icon3" class="bi bi-cart3"></i> 
+                      <span id="cart-count">0</span> 
+                  </a>
+                  <ul id="cart-items"></ul>
+                  <aside id="total">0.00 KZ</aside>
+              </nav>
+                </header>
+
+              </div>
+                   
+                    <!-- Modal do Carrinho -->
+            <div id="cartModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Seus Produtos</h2>
+                <div id="cartItems" class="cart-list"></div>
+                <aside id="cartTotal">Total: 0.00 KZ</aside>
+                <div class="horizontal">
+                   <button id="eliminar_produto" onclick="elimnar_produto()">🗑️ Eliminar Tudo</button>
+                  <!-- <a href="../finalizacao/finalizar.html"> -->
+                  <button id="checkoutButton">🚀Finalizar Compra</button>
+                </a>
+                </div>
+               
+              </div>
+            </div>
+                  <!-- end modal do carrinho  -->
+        
+                    <div class="menu">
+                        <nav>
+                            <div class="categoria">
+                                <button class="btncompre"><i style="font-size: 3vh; margin-right: 5%;"  class="bi bi-list"></i> Compre por Categoria </button>
+                                <div class="sub-menu">
+                                  <ul>
+                                    <li style="border-top: none;"><a href="../categoria/acessorios.html"><i class="fas fa-seedling"></i> Acessórios( Joias,Relógios e óculos)</a></li>
+                                    <li><a href="../categoria/roupasmasculinas.html"><i class="fas fa-home"></i> Roupas Masculinas</a></li>
+                                    <li><a href="../categoria/roupasfemininas.html"><i class="fas fa-blender"></i> Roupas Femininas</a></li>
+                                    <li><a href="../categoria/sapatos.html"><i class="fas fa-couch"></i> Sapatos</a></li>
+                                    <li><a href="../categoria/mochilasbolsas.html"><i class="fas fa-suitcase"></i> Mochilas e Bolsas</a></li>
+                                </ul>
+                                </div>         
+                            </div>
+
+                          <div class="links">
+                              <ul>
+                                <li><a class="link" href="../index.html">Início</a></li>
+                                <li><a  class="link" href="../produtos.html">Todos os Produtos</a></li>
+                                <li><a class="link" href="../marcas.html">Marcas</a></li>
+                                <li>        
+                                  <div class="categoria">
+                                    <a class="link" style="cursor: pointer;">Informações </a>
+                                    <div style="top: 28px; width: 120%;" class="sub-menu">
+                                      <ul style="display: block;">
+                                        <li style="border-top: none;"><a href="../informacoes/sobreteresa.html"><i class="fas fa-seedling"></i> Sobre o Mundo da Teresa</a></li>
+                                        <li><a href="../informacoes/locaisContatos.html"><i class="fas fa-home"></i> Locais e Contactos</a></li>
+                                        <li><a href=""><i class="fas fa-blender"></i> Promoções Ativas</a></li>
+                                        <li><a href=""><i class="fas fa-couch"></i> Dúvidas Frequentes</a></li>
+                                    </ul>
+                                  </div></li>
+                              </ul>
+                                
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- end header -->
+
+      <!-- chatbot -->
+    <button class="chat-button" onclick="openChat()">💬</button>
+    <div class="chat-modal" id="chat-modal">
+        <div class="header">
+          <figure><img src="../images/pessoas/chapeus_capa_interno_2x.webp" alt=""><span style="color: white; margin-left: 5px;">ChatTeresa</span></figure>
+          
+          <button class="close-button" onclick="closeChat()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <textarea type="text" style="padding: 7px;" id="user-input" placeholder="    Digite sua pergunta..."></textarea>
+            <button id="botao-enviar" onclick="sendMessage()"><i class="bi bi-cursor-fill"></i></button>
+        </div>
+    </div>
+    <!-- end chatbot -->
+
+                     <!-- todos acessórios -->
+                     <div class="produtos">
+                        <h3>Acessórios</h3>
+                        <div class="sub-produtos">
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="S" data-estoque="12" data-id="1" data-nome="Joia Masculina" data-preco="6000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/roupas masculinas/joia-masculina.webp">
+                                <figure><img src="../images/roupas masculinas/joia-masculina.webp" alt=""></figure>
+                                <h5 >Joia Masculina</h5>
+                                <p> 6.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="1"
+                                  data-image="../images/roupas masculinas/joia-masculina.webp"
+                                  data-name="Joia Masculina"
+                                  data-price="6000" onclick="try { addToCart(6000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn" class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>
+                           </section> 
+
+                            
+                            
+                                            <!-- Modal -->
+                                 <div class="overlay" id="overlay" style="display: none;"></div>
+                        <div class="modal" id="modal" style="display: none;">
+                            <div style="background-color: blue;" class="modal-header">
+                                Produto Adicionado ao Carrinho com Sucesso !!
+                                <button style="background-color: blue;" id="fechar-modal" onclick="closeModal()">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="modal-image" src="" alt="Produto" style="max-width: 100px; margin-bottom: 10px;">
+                                <h5 id="modal-nome"></h5>
+                                <p id="modal-preco"></p>
+                                <p id="modal-fornecedor"></p>
+                                 <p id="modal-tamanho" style="margin-right: 10%;">📏 <strong>Tamanho:</strong> <span id="tamanho-valor"></span></p>
+                                 <p id="modal-estoque" style="">📦 <strong>Estoque:</strong> <span id="estoque-valor"></span> unidades</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" id="continuar" onclick="closeModal()">Continuar comprando</button>
+                                <a href="../finalizacao/finalizar.html" style="height: 7vh; background-color: blue;" class="btn btn-primary" id="finalizar">Finalizar a encomenda</a>
+                            </div>
+                        </div>
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="M" data-estoque="11" data-id="2" data-nome="Colar Rivieira" data-preco="7000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/colares/colar riviera zircônica.jpeg">
+                                <figure><img src="../images/colares/colar riviera zircônica.jpeg" alt=""></figure>
+                                <h5 >Colar Rivieira</h5>
+                                <p> 7.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="2"
+                                  data-image="../images/colares/colar riviera zircônica.jpeg"
+                                  data-name="Colar Rivieira"
+                                  data-price="7000" onclick="try { addToCart(7000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="M" data-estoque="12" data-id="3" data-nome="Joia Premium" data-preco="9000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/colares/joia premium.jpg">
+                                <figure><img src="../images/colares/joia premium.jpg" alt=""></figure>
+                                <h5 >Joia Premium</h5>
+                                <p> 9.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="3"
+                                  data-image="../images/colares/joia premium.jpg"
+                                  data-name="Joia Premium"
+                                  data-price="9000" onclick="try { addToCart(9000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="M" data-estoque="10" data-id="4" data-nome="Colar de Prata" data-preco="12000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/colares/colar de prata.avif">
+                                <figure><img src="../images/colares/colar de prata.avif" alt=""></figure>
+                                <h5 >Colar de Prata</h5>
+                                <p> 12.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="4"
+                                  data-image="../images/colares/colar de prata.avif"
+                                  data-name="Colar de Prata"
+                                  data-price="12000" onclick="try { addToCart(12000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="20" data-estoque="13" data-id="5" data-nome="Relógio" data-preco="10500 kzs" data-fornecedor="Amazon" data-imagem="../images/relógios/relógio amazon.jpg ">
+                                <figure><img style="filter: brightness(1.3);"  src="../images/relógios/relógio amazon.jpg " alt=""></figure>
+                                <h5>Relógio</h5>
+                                <p> 10.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Amazon</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="5"
+                                  data-image="../images/relógios/relógio amazon.jpg"
+                                  data-name="Relógio"
+                                  data-price="10500" onclick="try { addToCart(10500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="19" data-estoque="12" data-id="6" data-nome="Relógio th" data-preco="7000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/relógios/th.jpg">
+                                <figure><img src="../images/relógios/th.jpg" alt=""></figure>
+                                <h5 >Relógio th</h5>
+                                <p> 7.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="6"
+                                  data-image="../images/relógios/th.jpg"
+                                  data-name="Relógio th"
+                                  data-price="7000" onclick="try { addToCart(7000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>  
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="20" data-estoque="9" data-id="7" data-nome="Relógio da Xaomi Inteligente" data-preco="8000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/relógios/relógio inteligente.webp">
+                                <figure><img style="filter: brightness(1.5);"  src="../images/relógios/relógio inteligente.webp" alt=""></figure>
+                                <h5 >Relógio da Xaomi Inteligente</h5>
+                                <p> 8.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="7"
+                                  data-image="../images/relógios/relógio inteligente.webp"
+                                  data-name="Relógio da Xaomi Inteligente"
+                                  data-price="8000" onclick="try { addToCart(8000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="20" data-estoque="7" data-id="8" data-nome="Relógio da Xaomi" data-preco="6500 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/relógios/xiaomi.jpg">
+                                <figure><img src="../images/relógios/xiaomi.jpg" alt=""></figure>
+                                <h5 >Relógio da Xaomi</h5>
+                                <p> 6.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="8"
+                                  data-image="../images/relógios/xiaomi.jpg"
+                                  data-name="Relógio da Xaomi"
+                                  data-price="6500" onclick="try { addToCart(6500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="24" data-estoque="6" data-id="9" data-nome="Óculos Retangular" data-preco="14000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/óculos/óculos retangular.webp">
+                                <figure><img src="../images/óculos/óculos retangular.webp" alt=""></figure>
+                                <h5 >Óculos Retangular</h5>
+                                <p> 14.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="9"
+                                  data-image="../images/óculos/óculos retangular.webp"
+                                  data-name="Óculos Retangular"
+                                  data-price="14000" onclick="try { addToCart(14000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="23" data-estoque="7" data-id="10" data-nome="Óculos Quadrado" data-preco="13000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images//óculos/óculos quadrado.jpg">
+                                <figure><img src="../images//óculos/óculos quadrado.jpg" alt=""></figure>
+                                <h5 >Óculos Quadrado</h5>
+                                <p> 13.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="10"
+                                  data-image="../images//óculos/óculos quadrado.jpg"
+                                  data-name="Óculos Quadrado"
+                                  data-price="13500" onclick="try { addToCart(13500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn" class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="23" data-estoque="13" data-id="11" data-nome="Óculos de Sol" data-preco="10000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/óculos/óculos de sol.jpg">
+                                <figure><img src="../images/óculos/óculos de sol.jpg" alt=""></figure>
+                                <h5 >Óculos de Sol</h5>
+                                <p> 10.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="11"
+                                  data-image="../images/óculos/óculos de sol.jpg"
+                                  data-name="Óculos de Sol"
+                                  data-price="10000" onclick="try { addToCart(10000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="24" data-estoque="12" data-id="12" data-nome="Óculos de Natação" data-preco="10000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/óculos/óculos de natação.jpg">
+                                <figure><img src="../images/óculos/óculos de natação.jpg" alt=""></figure>
+                                <h5 >Óculos de Natação</h5>
+                                <p> 10.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="12"
+                                  data-image="../images/óculos/óculos de natação.jpg"
+                                  data-name="Óculos de Natação"
+                                  data-price="10000" onclick="try { addToCart(10000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="16" data-estoque="18" data-id="13" data-nome="Pulseira Bracelete Espinho" data-preco="11000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/pulseiras/pulseira bracelete espinho.jpg">
+                                <figure><img src="../images/pulseiras/pulseira bracelete espinho.jpg" alt=""></figure>
+                                <h5>Pulseira Bracelete Espinho</h5>
+                                <p> 11.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="13"
+                                  data-image="../images/pulseiras/pulseira bracelete espinho.jpg"
+                                  data-name="Pulseira Bracelete Espinho"
+                                  data-price="11000" onclick="try { addToCart(11000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="17" data-estoque="15" data-id="14" data-nome="Bracelete Trançado" data-preco="6000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/pulseiras/bracelete trançado.jpg">
+                                <figure><img src="../images/pulseiras/bracelete trançado.jpg" alt=""></figure>
+                                <h5 >Bracelete Trançado</h5>
+                                <p> 7.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="14"
+                                  data-image="../images/pulseiras/bracelete trançado.jpg"
+                                  data-name="Bracelete Trançado"
+                                  data-price="7000" onclick="try { addToCart(7000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div> 
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="9" data-estoque="11" data-id="15" data-nome="Aneis de Namoro" data-preco="9000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/aneis/aneis de namoro.jpg">
+                                <figure><img style="filter: brightness(1.1);" src="../images/aneis/aneis de namoro.jpg" alt=""></figure>
+                                <h5 >Aneis de Namoro</h5>
+                                <p> 9.000 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="15"
+                                  data-image="../images/aneis/aneis de namoro.jpg"
+                                  data-name="Aneis de Namoro"
+                                  data-price="9000" onclick="try { addToCart(9000); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+
+                           <section class="todos-produtos">
+                            <div class="card2" data-tamanho="8" data-estoque="12" data-id="16" data-nome="Aneis de Casamento" data-preco="15000 kzs" data-fornecedor="Mundo da Teresa" data-imagem="../images/aneis/aneis de casamento.jpg">
+                                <figure><img src="../images/aneis/aneis de casamento.jpg" alt=""></figure>
+                                <h5 >Aneis de Casamento</h5>
+                                <p> 15.500 <sup>00</sup> kzs</p>
+                                 <strong>Fornecedor: <span>Mundo da Teresa</span></strong>
+                                 <div class="botao">
+                                  <button id="btn"
+                                  data-id="16"
+                                  data-image="../images/aneis/aneis de namoro.jpg"
+                                  data-name="Aneis de Casamento"
+                                  data-price="15500" onclick="try { addToCart(15500); } catch(e) {} try { openProductModal(this); } catch(e) {}" id="btn"  class="btn btn-primary"><i class="bi bi-cart3">Comprar agora</i></button>
+                              </div>
+                            </div>   
+                           </section>
+                           
+                        </div>
+                    </div>
+
+                      <!-- end todos acessórios -->
+
+
+                        <!-- footer -->
+                        <div class="rodapemaximum">
+
+                            <footer>
+                        
+                              <section>
+                                <h3>Mundo da Teresa <br> - Loja online</h3>
+                                <leg class="text">Encontre os melhores produtos <br> no "Mundo da Teresa" agora Online</leg>
+                                
+                                <div>
+                                  <span>Linha direta 24/7 (+244) 953435021</span> 
+                                  <span>Luanda, Angola</span> 
+                                  <span> Seg - Sáb 07H -18H /
+                                        Dom 07H -15H
+                                    <span>
+                                </div>
+                        
+                              </section>
+                          
+                              <section>
+                                <h3>Menu</h3>
+                        
+                                <span><a href="../index.html">Início</a></span>
+                                <span><a href="../produtos.html">Todos os produtos</a></span> 
+                                <span><a href="../marcas.html">Marcas</a></span>
+                                <span ><a style="color: transparent;" >Informações</a></span>
+                                <span ><a style="color: transparent;" >Informações</a></span>
+                                <span><a style="color: transparent;" >Informações</a></span>
+                                <span><a style="color: transparent;" >Informações</a></span>
+                        
+                              </section>
+                          
+                              <section>
+                                <h3>Outras Categorias</h3>
+                                <div class="outras-catrgorias">
+                                  <span><a href="../categoria/roupasinfantis.html">Roupas Infantis</a></span>
+                                  <span><a href="../categoria/botasfemininas.html">Botas Femininas</a></span>
+                                  <span><a href="../categoria/perfumes.html">Perfumes</a></span>
+                                  <span><a style="color: transparent;">Colar</a></span>
+                                  <span><a style="color: transparent;">Chinelos</a></span> 
+                                  <span><a style="color: transparent;">Calções</a></span> 
+                                </div>
+                           
+                              </section>
+                          
+                              <section>
+                                <h3>Boletim de Notícias</h3>
+                        
+                                <span>
+                                  Registre-se agora para receber 
+                                  atualizações sobre <br> promoções 
+                                  e cupons. Não se preocupe! 
+                                  Não enviamos spam
+                                </span>
+                        
+                                <div class="inscricao">
+                                  
+                                   <input type="text" placeholder="digite seu e-mail">
+                                  <button> <i id="envelope" class="bi bi-envelope"></i> inscrever-se</button>
+                                  
+                                </div>
+                              </section>
+                          
+                            </footer>
+                          
+                            <div class="sub-footer">
+                              
+                              <div class="sub2-footer2">
+                              <h6> &copy;2025 mundo da teresa Online Todos <br> 
+                                Direitos Reservados
+                              </h6>
+                        
+                              <figure><img src="../images/logotipos/express.png" alt="error...">
+                                <img src="../images/logotipos/multicaixa.jpeg" style="width: 30px;" alt="error...">
+                              </figure>
+                              <h4>Multicaixa</h4>
+                              <h5>fique conectado: 
+                              <a href="https://www.facebook.com/mundodateresa" target="_blank">
+                                <i id="icon-redes-sociais" class="bi bi-facebook"></i>
+                              </a>
+                              <a href="https://www.instagram.com/mundodateresa" target="_blank">
+                                <i id="icon-redes-sociais" class="bi bi-instagram"></i>
+                              </a>
+                              <a href="https://twitter.com/mundodateresa" target="_blank">
+                                <i id="icon-redes-sociais" class="bi bi-twitter"></i>
+                              </a>
+                              </h5>
+                        
+                              </div>
+                        
+                            </div>
+                        
+                          </div>
+                        
+                           <!-- end footer -->
+                        
+                        
+
+        <!-- Javascript files-->
+        <script src="../https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/popper.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery-3.0.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- sidebar -->
+        <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../js/custom.js"></script>
+            <script defer>
+// Adicione um atraso para iniciar o carrossel automaticamente após um tempo maior
+$('#carouselExampleAutoplaying').carousel({
+  interval: 5000 // Atraso de 5 segundos entre os slides
+});
+
+// Mostrar o primeiro item de forma suave ao carregar
+$('.carousel-item:first').addClass('active');
+
+    </script>
+</body>
+</html>
